@@ -1,55 +1,67 @@
 /*Your styles*/
 
 body {
-    margin: 20px;
+  margin: 5px 10px 10px 10px;
 }
 
 #content {
-    margin-right: auto;
-    margin-left: auto;
-    vertical-align: middle;
-    width: 100%;
+  margin-right:   auto;
+  margin-left:    auto;
+  vertical-align: middle;
+  width:          100%;
 }
 
-/*
-Those classes will be edited at runtime with values specified
-by the settings of the CC application
-*/
-.hostFontColor {
+input {
+  box-sizing: border-box;
+  display:    inline-block;
 }
 
-.hostFontFamily {
+.block {
+  margin-bottom: 3px;
+  width:         360px;
 }
 
-.hostFontSize {
+.hostTextarea {
+  border:      1px solid;
+  width:       37px;
+  height:      20px;
+  display:     inline-block;
+  font-weight: bold;
+  text-align:  center;
+  border:      1px solid;
+  margin:      1px 0;
+  box-sizing:  border-box;
 }
 
-/*font family, color and size*/
-.hostFont {
+.label {
+  border:          none;
+  width:           37px;
+  heigh:           20px;
+  display:         inline-block;
+  text-align:      center;
+  font-weight:     bold;
+  text-decoration: underline;
 }
 
-/*background color*/
-.hostBgd {
-}
-
-/*lighter background color*/
-.hostBgdLight {
-}
-
-/*darker background color*/
-.hostBgdDark {
-}
-
-/*background color and font*/
-.hostElt {
+.top-label {
+  font-weight: bold;
+  font-size:   1.1em;
 }
 
 .hostButton {
-    border: 1px solid;
-    border-radius: 2px;
-    height: 20px;
-    vertical-align: bottom;
-    font-family: inherit;
-    color: inherit;
-    font-size: inherit;
+  border:         1px solid;
+  border-radius:  2px;
+  height:         20px;
+  vertical-align: bottom;
+  font-family:    inherit;
+  color:          inherit;
+  font-size:      inherit;
+}
+
+.float-right {
+  float: right;
+}
+
+#btn_ok {
+  width:        70px;
 }

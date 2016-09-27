@@ -1,2 +1,2 @@
-#Add gread-lines inside selected rectangle
+#Add grid-lines inside selected rectangle
 ##HTML extension panel for Adobe Illustrator
