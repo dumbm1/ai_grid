@@ -1,25 +1,25 @@
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, regexp: true, indent: 4, maxerr: 50 */
 /*global $, Folder*/
 
-function killCEP () {
-  /**
-   * make bat-file that kill all system processes CEPHTMLEngine.exe
-   */
-  _execFile (
-    Folder.temp.absoluteURI + '/' + 'taskkil.bat',
-    'taskkill /IM CEPHTMLEngine.exe /f'
+function addGrid (obj) {
+
+  scrollWin (
+    obj.left + '\n' + obj.right + '\n' + obj.vCent + '\n' +
+    obj.top + '\n' + obj.bott + '\n' + obj.hCent
   );
-  /**
-   * make new file by full path, write to disk with some file contenr, execute file
-   *
-   * @param {String} filePath - FULL path (include file-extension)
-   * @param {String} fileContent - content to new file
-   */
-  function _execFile ( filePath, fileContent ) {
-    var f = new File ( filePath );
-    f.open ( 'e' );
-    f.write ( fileContent );
-    f.close ();
-    f.execute ();
-  }
+  return 8;
 }
+
+function scrollWin (input) {
+  if (input instanceof Array)     input = input.join ("\r");
+
+  var w    = new Window ("dialog", 'Scrollable alert'),
+      list = w.add ("edittext", undefined, input, {multiline: true, scrolling: true});
+
+  list.maximumSize.height = w.maximumSize.height - 100;
+  list.minimumSize.width  = 600;
+
+  w.add ("button", undefined, "Close", {name: "ok"});
+  w.show ();
+}
+

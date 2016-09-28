@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionManifest Version="4.0"
                    ExtensionBundleId="com.wk.ai_grid_wk"
-                   ExtensionBundleVersion="0.1"
+                   ExtensionBundleVersion="0.2"
                    ExtensionBundleName="template"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Author><![CDATA[Marat Shagiev]]></Author>
@@ -9,11 +9,11 @@
     <Legal><![CDATA[Legal stuff...]]></Legal>
     <Abstract href="https://github.com/dumbm1/ai_grid">
         <![CDATA[
-        This is a … for the …
+        Make grid-lines inside selected rectangle
         ]]>
     </Abstract>
     <ExtensionList>
-        <Extension Id="com.wk.ai_grid_wk" Version="0.1"/>
+        <Extension Id="com.wk.ai_grid_wk" Version="0.2"/>
     </ExtensionList>
     <ExecutionEnvironment>
         <HostList>
@@ -38,20 +38,20 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>ai_grid_wk 0.1</Menu>
+                    <Menu>ai_grid_wk 0.2</Menu>
                     <Geometry>
                         <Size>
-                            <Height>285</Height>
-                            <Width>380</Width>
-                            <MinSize>
-                           <Height>285</Height>
-                           <Width>380</Width>
-                       </MinSize>
-                       <MaxSize>
-                           <Height>285</Height>
-                           <Width>380</Width>
-                       </MaxSize>
+                            <Height>225</Height>
+                            <Width>405</Width>
                         </Size>
+                        <MinSize>
+                            <Height>225</Height>
+                            <Width>405</Width>
+                        </MinSize>
+                        <MaxSize>
+                            <Height>225</Height>
+                            <Width>405</Width>
+                        </MaxSize>
                     </Geometry>
                     <Icons>
                         <Icon Type="Normal">./icons/iconNormal.png</Icon>

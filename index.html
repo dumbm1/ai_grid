@@ -5,9 +5,8 @@
     <link rel="stylesheet" href="css/topcoat-desktop-dark.min.css"/>
     <link id="hostStyle" rel="stylesheet" href="css/styles.css"/>
 
-    <title></title>
+    <title>ai-grid</title>
     <style type="text/css">
-
     </style>
 </head>
 
@@ -15,9 +14,9 @@
 
 <div id="content">
     <div class="block">
-        <span class="top-label">Horizontal:</span>
+        <span class="top-label">Vertical grid-lines:</span>
         <div class="line" id="left">
-            <span class="label">L</span>
+            <span class="label">Left</span>
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
@@ -36,25 +35,25 @@
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
-            <span class="label">R</span>
+            <span class="label">Right</span>
         </div>
-        <div class="line" id="h_center">
+        <div class="line" id="v_cent">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
-            <span class="label">C</span>
+            <span class="label">Center</span>
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
         </div>
     </div>
-
+    <div class="sep-horiz"></div>
     <div class="block">
-        <span class="top-label">Vertical:</span>
+        <span class="top-label">Horizontal grid-lines:</span>
         <div class="line" id="top">
-            <span class="label">T</span>
+            <span class="label">Top</span>
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
@@ -64,7 +63,7 @@
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
         </div>
-        <div class="line" id="bottom">
+        <div class="line" id="bott">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
@@ -73,26 +72,26 @@
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
-            <span class="label">B</span>
+            <span class="label">Bottom</span>
         </div>
-        <div class="line" id="v_center">
+        <div class="line" id="h_cent">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
-            <span class="label">C</span>
+            <span class="label">Center</span>
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
             <input class="hostTextarea" type="number">
         </div>
     </div>
-
-
+    <div class="sep-horiz"></div>
     <div class="block">
         <input type="button" id="btn_clear" class="hostButton" value="Clear">
-        <input type="button" id="btn_github" class="hostButton" value="GitHub">
         <input type="button" id="btn_ok" class="hostButton" value="OK"/>
+        <input type="image" id="img_github" class="float-right" title="Open source on https://github.com/dumbm1/ai_grid"
+               src="img/GitHub-Mark-32px.png">
     </div>
 
 </div>
