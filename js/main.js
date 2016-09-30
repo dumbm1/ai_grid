@@ -36,6 +36,10 @@
       window.cep.util.openURLInDefaultBrowser ("https://github.com/dumbm1/ai_grid");
     });
     $ ("#btn_clear").click (reloadPanel);
+    $ ("#btn_close").click (function () {
+      csInterface.closeExtension ();
+    });
+
   }
 
   init ();
