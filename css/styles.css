@@ -25,29 +25,29 @@ input {
 }
 
 .hostTextarea {
-  border:      1px solid;
-  width:       40px;
-  height:      20px;
-  display:     inline-block;
-  text-align:  center;
-  border:      1px solid;
-  margin:      1px 0;
-  box-sizing:  border-box;
+  border:     1px solid;
+  width:      40px;
+  height:     20px;
+  display:    inline-block;
+  text-align: center;
+  border:     1px solid;
+  margin:     1px 0;
+  box-sizing: border-box;
 }
 
 .label {
-  border:      none;
-  width:       40px;
-  display:     inline-block;
-  text-align:  center;
-  overflow:    hidden;
+  border:     none;
+  width:      40px;
+  display:    inline-block;
+  text-align: center;
+  overflow:   hidden;
 }
 
 .top-label {
-  display:         block;
-  margin-bottom:   5px;
-  width:           383px;
-  overflow:        hidden;
+  display:       block;
+  margin-bottom: 5px;
+  width:         383px;
+  overflow:      hidden;
 }
 
 .hostButton {
@@ -72,7 +72,10 @@ input {
 }
 
 #btn_ok {
-  width: 70px;
+  /*width:        150px;*/
+  font-weight:  bold;
+  font-size:    1.1em;
+  border-style: dashed;
 }
 
 #img_github {
