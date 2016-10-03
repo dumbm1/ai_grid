@@ -16,21 +16,26 @@
     themeManager.init ();
     loadJSX ("json2.js");
 
-    $ ("#btn_ok").click (function () {
-      /*      var obj   = {};
-       obj.left  = getInput ('left');
-       obj.right = getInput ('right');
-       obj.vCent = getInput ('v_cent');
-       obj.top   = getInput ('top');
-       obj.bott  = getInput ('bott');
-       obj.hCent = getInput ('h_cent');
-       csInterface.evalScript ('addGrid(' + JSON.stringify (obj) + ')', function (res) {
-       // alert (res);
-       });*/
+    $ ("#btn_ok").click (function () {/**/
       csInterface.evalScript ('addGrid(' + JSON.stringify (getInputs ()) + ')', function (res) {
-        // alert (res);
       })
     })
+    var inputElems = document.getElementsByTagName ('input');
+
+    for (var i = 0; i < inputElems.length; i++) {
+      var obj        = inputElems[i];
+      obj.onkeypress = function (e) {
+        // keypress keyCode=44 which=44 charCode=44 char=,
+        // keypress keyCode=46 which=46 charCode=46 char=.
+        if (e.keyCode == 44) {
+          if (this.value.match (/\./)) return false;
+          this.value += '.';
+          return false;
+        }
+      }
+    }
+
+
 
     $ ("#img_github").click (function () {
       window.cep.util.openURLInDefaultBrowser ("https://github.com/dumbm1/ai_grid");
@@ -57,22 +62,6 @@
    * @param {String) setID - container ID that contains the input fields,
    * @return {Array} inputValues - values of input fields (string-numbers)
    * */
-  function getInput (setID) {
-    var arr     = [],
-        leftVal = document.getElementById (setID);
-
-    for (var i = 0; i < leftVal.getElementsByTagName ('input').length; i++) {
-      var val = leftVal.getElementsByTagName ('input')[i].value;
-
-      if (val && isNum (val)) {
-        arr.push (val);
-      } else {
-        break;
-      }
-    }
-    return arr;
-  }
-
   function getInputs () {
     var o      = {
           left: [], right: [], v_cent: [[], []], top: [], bott: [], h_cent: [[], []]
@@ -86,47 +75,31 @@
         h_cent = document.getElementById ('h_cent').getElementsByTagName ('input');
 
     for (i = 0; i < left.length; i++) {
-      val = left[i].value;
-      if (!val) continue;
-      o.left.push (val);
+      pushVal (left[i].value, o.left);
     }
     for (i = 0; i < top.length; i++) {
-      val = top[i].value;
-      if (!val) continue;
-      o.top.push (val);
+      pushVal (top[i].value, o.top);
     }
     for (i = right.length - 1; i >= 0; i--) {
-      val = right[i].value;
-      if (!val) continue;
-      o.right.push (val);
+      pushVal (right[i].value, o.right);
     }
     for (i = bott.length - 1; i >= 0; i--) {
-      val = bott[i].value;
-      if (!val) continue;
-      o.bott.push (val);
+      pushVal (bott[i].value, o.bott);
     }
     {
       for (i = v_cent.length / 2 - 1; i >= 0; i--) {
-        val = v_cent[i].value;
-        if (!val) continue;
-        o.v_cent[0].push (val);
+        pushVal (v_cent[i].value, o.v_cent[0]);
       }
       for (i = v_cent.length / 2; i < v_cent.length; i++) {
-        val = v_cent[i].value;
-        if (!val) continue;
-        o.v_cent[1].push (val);
+        pushVal (v_cent[i].value, o.v_cent[1]);
       }
     }
     {
       for (i = h_cent.length / 2 - 1; i >= 0; i--) {
-        val = h_cent[i].value;
-        if (!val) continue;
-        o.h_cent[0].push (val);
+        pushVal (h_cent[i].value, o.h_cent[0]);
       }
       for (i = h_cent.length / 2; i < h_cent.length; i++) {
-        val = h_cent[i].value;
-        if (!val) continue;
-        o.h_cent[1].push (val);
+        pushVal (h_cent[i].value, o.h_cent[1]);
       }
     }
     return o;
@@ -134,6 +107,16 @@
 
   function isNum (n) {
     return !isNaN (parseFloat (n)) && isFinite (n);
+  }
+
+  /**
+   * immediate change val and arr
+   * */
+  function pushVal (val, arr) {
+    if (!val) return;
+    val = val.replace (/,/gmi, '.');
+    if (!isNum (val)) return;
+    arr.push (val);
   }
 
 } ());
