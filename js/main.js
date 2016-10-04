@@ -19,23 +19,24 @@
     $ ("#btn_ok").click (function () {/**/
       csInterface.evalScript ('addGrid(' + JSON.stringify (getInputs ()) + ')', function (res) {
       })
-    })
-    var inputElems = document.getElementsByTagName ('input');
+    });
 
+    /**
+     * Handling the incorrect input
+     * */
+    var inputElems = document.getElementsByTagName ('input');
     for (var i = 0; i < inputElems.length; i++) {
       var obj        = inputElems[i];
       obj.onkeypress = function (e) {
         // keypress keyCode=44 which=44 charCode=44 char=,
         // keypress keyCode=46 which=46 charCode=46 char=.
         // keypress keyCode=46-57 which=46-57 charCode=46-57 char=0-9
-
+        if (e.keyCode > 57 || e.keyCode < 48 && (e.keyCode != 44 && e.keyCode != 46)) {
+          return false;
+        }
         if (e.keyCode == 44 || e.keyCode == 46) {
           if (this.value.match (/[.,]/)) return false;
           this.value += '.';
-          return false;
-        }
-        if (e.keyCode > 57 && e.keyCode < 48) {
-          this.value += '';
           return false;
         }
       }

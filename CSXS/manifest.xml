@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ExtensionManifest Version="4.0"
                    ExtensionBundleId="com.wk.ai_grid_wk"
-                   ExtensionBundleVersion="0.5"
+                   ExtensionBundleVersion="0.6"
                    ExtensionBundleName="template"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Author><![CDATA[Marat Shagiev]]></Author>
@@ -13,7 +13,7 @@
         ]]>
     </Abstract>
     <ExtensionList>
-        <Extension Id="com.wk.ai_grid_wk" Version="0.5"/>
+        <Extension Id="com.wk.ai_grid_wk" Version="0.6"/>
     </ExtensionList>
     <ExecutionEnvironment>
         <HostList>
@@ -38,7 +38,7 @@
                 </Lifecycle>
                 <UI>
                     <Type>Panel</Type>
-                    <Menu>ai_grid_wk 0.5</Menu>
+                    <Menu>ai_grid_wk 0.6</Menu>
                     <Geometry>
                         <Size>
                             <Height>225</Height>
