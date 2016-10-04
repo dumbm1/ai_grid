@@ -2,7 +2,7 @@
 <ExtensionManifest Version="4.0"
                    ExtensionBundleId="com.wk.ai_grid_wk"
                    ExtensionBundleVersion="0.6"
-                   ExtensionBundleName="template"
+                   ExtensionBundleName="ai_grid_wk"
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <Author><![CDATA[Marat Shagiev]]></Author>
     <Contact mailto="m_js@bk.ru"><![CDATA[m_js@bk.ru]]></Contact>
