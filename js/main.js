@@ -27,15 +27,19 @@
       obj.onkeypress = function (e) {
         // keypress keyCode=44 which=44 charCode=44 char=,
         // keypress keyCode=46 which=46 charCode=46 char=.
-        if (e.keyCode == 44) {
-          if (this.value.match (/\./)) return false;
+        // keypress keyCode=46-57 which=46-57 charCode=46-57 char=0-9
+
+        if (e.keyCode == 44 || e.keyCode == 46) {
+          if (this.value.match (/[.,]/)) return false;
           this.value += '.';
+          return false;
+        }
+        if (e.keyCode > 57 && e.keyCode < 48) {
+          this.value += '';
           return false;
         }
       }
     }
-
-
 
     $ ("#img_github").click (function () {
       window.cep.util.openURLInDefaultBrowser ("https://github.com/dumbm1/ai_grid");
