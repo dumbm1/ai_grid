@@ -28,9 +28,10 @@
     for (var i = 0; i < inputElems.length; i++) {
       var obj        = inputElems[i];
       obj.onkeypress = function (e) {
-        // keypress keyCode=44 which=44 charCode=44 char=,
-        // keypress keyCode=46 which=46 charCode=46 char=.
-        // keypress keyCode=46-57 which=46-57 charCode=46-57 char=0-9
+        // keypress keyCode, which and charCode == 44 char=,
+        // keypress keyCode, which and charCode == 46 char=.
+        // keypress keyCode, which and charCode == 46-57; char == 0-9
+        // keypress keyCode, which and charCode == 42, 43, 45, 47; chars == *, +, - and /
         if (e.keyCode > 57 || e.keyCode < 48 && (e.keyCode != 44 && e.keyCode != 46)) {
           return false;
         }
